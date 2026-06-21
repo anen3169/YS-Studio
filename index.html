@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YS Studio</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
+}
+
+body{
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* Açılış */
+
+#loading{
+position:fixed;
+inset:0;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:99999;
+animation:loadingFade 4s forwards;
+}
+
+.logo{
+font-size:8rem;
+font-weight:900;
+letter-spacing:-10px;
+
+opacity:0;
+filter:blur(40px);
+
+animation:appleIntro 2.8s ease forwards;
+}
+
+@keyframes appleIntro{
+
+0%{
+opacity:0;
+transform:scale(.65);
+filter:blur(40px);
+}
+
+50%{
+opacity:1;
+transform:scale(1);
+filter:blur(0);
+}
+
+100%{
+opacity:1;
+transform:scale(1.15);
+filter:blur(0);
+}
+}
+
+@keyframes loadingFade{
+
+85%{
+opacity:1;
+}
+
+100%{
+opacity:0;
+visibility:hidden;
+}
+}
+
+/* Navbar */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+padding:22px;
+background:rgba(0,0,0,.6);
+backdrop-filter:blur(20px);
+z-index:1000;
+}
+
+nav{
+display:flex;
+justify-content:center;
+gap:40px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:15px;
+transition:.3s;
+}
+
+nav a:hover{
+opacity:.6;
+}
+
+/* Hero */
+
+.hero{
+min-height:100vh;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:clamp(4rem,10vw,8rem);
+font-weight:800;
+}
+
+.hero p{
+max-width:750px;
+margin-top:20px;
+font-size:1.2rem;
+color:#bdbdbd;
+line-height:1.7;
+}
+
+.button{
+margin-top:35px;
+padding:16px 36px;
+border-radius:999px;
+background:white;
+color:black;
+text-decoration:none;
+font-weight:600;
+}
+
+/* Bölümler */
+
+.section{
+padding:120px 20px;
+text-align:center;
+}
+
+.section h2{
+font-size:3rem;
+margin-bottom:50px;
+}
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+width:330px;
+padding:30px;
+border-radius:30px;
+
+background:rgba(255,255,255,.04);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+font-size:1.8rem;
+margin-bottom:15px;
+}
+
+.card p{
+color:#cfcfcf;
+line-height:1.7;
+}
+
+/* Biz Kimiz */
+
+.about{
+max-width:900px;
+margin:auto;
+
+padding:40px;
+
+border-radius:35px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+line-height:2;
+font-size:1.1rem;
+}
+
+/* Arka plan ışıklar */
+
+.glow{
+position:fixed;
+border-radius:50%;
+filter:blur(120px);
+pointer-events:none;
+z-index:-1;
+}
+
+.g1{
+width:400px;
+height:400px;
+background:#222;
+top:-100px;
+left:-100px;
+}
+
+.g2{
+width:500px;
+height:500px;
+background:#111;
+right:-150px;
+bottom:-150px;
+}
+
+/* Footer */
+
+footer{
+padding:50px;
+text-align:center;
+color:#888;
+}
+</style>
+</head>
+<body>
+
+<div id="loading">
+<div class="logo">YS</div>
+</div>
+
+<div class="glow g1"></div>
+<div class="glow g2"></div>
+
+<header>
+<nav>
+<a href="#home">Ana Sayfa</a>
+<a href="#projects">Projeler</a>
+<a href="#about">Biz Kimiz</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+
+<h1>YS Studio</h1>
+
+<p>
+Özgün animasyonlar, karakterler ve hikâyeler geliştiren bağımsız bir yaratıcı stüdyo.
+Canivar ve Bu Dünya gibi projeler burada hayat buluyor.
+</p>
+
+<a href="#projects" class="button">
+Projeleri Keşfet
+</a>
+
+</section>
+
+<section class="section" id="projects">
+
+<h2>Projeler</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Canivar</h3>
+<p>
+Çocukluk korkularını yüzünüze vuran gizemli ve duygusal bir hikâye evreni.
+</p>
+</div>
+
+<div class="card">
+<h3>Bu Dünya</h3>
+<p>
+YS Studio'nun özgün animasyon serisi ve kendi evreni.
+</p>
+</div>
+
+<div class="card">
+<h3>Yakında...</h3>
+<p>
+Yeni animasyonlar, oyunlar ve yaratıcı projeler geliştiriliyor.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="about">
+
+<h2>Biz Kimiz?</h2>
+
+<div class="about">
+
+YS Studio, Yusuf Kanmaz tarafından kurulan bağımsız bir animasyon ve hikâye stüdyosudur.
+
+<br><br>
+
+Amacımız unutulmaz karakterler, güçlü hikâyeler ve özgün dünyalar oluşturmaktır.
+
+<br><br>
+
+Canivar, Bu Dünya ve gelecekteki tüm projeler bu vizyonun bir parçasıdır.
+
+</div>
+
+</section>
+
+<footer>
+© 2026 YS Studio
+</footer>
+
+</body>
+</html>
